@@ -17,10 +17,64 @@
             margin: 0 auto;
             background: black;
         }
+        #startScreen, #highscoreScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+        button {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background: #555;
+        }
+        #xpBar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
     </style>
 </head>
 <body>
-    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="startScreen">
+        <div>Welcome to Space Shooter</div>
+        <button id="playButton">Play</button>
+        <button id="highscoreButton">Highscore</button>
+        <button id="settingsButton">Settings</button>
+    </div>
+    <div id="highscoreScreen" style="display: none;">
+        <div>Highscore</div>
+        <div id="highscore">Best Level: 0</div>
+        <button id="backButton">Back</button>
+    </div>
+    <div id="xpBar">
+        <span id="xpLabel">XP: 0</span> | <span id="levelLabel">Level: 1</span>
+    </div>
+    <canvas id="gameCanvas" width="1920" height="1080"></canvas>
     <script src="game.js"></script>
 </body>
 </html>
